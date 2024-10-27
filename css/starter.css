@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    font-size: 16pt; /* test for this! Make all sizes em or rem */
+    font-size: 1.2rem; /* test for this! Make all sizes em or rem */
     font-family: "Poppins", serif;
     background-image: url("../images/concrete_seamless.png");
     background-color: #f1f1f1;
@@ -114,20 +114,22 @@ body{
 
 .nav_links{
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stacks links vertically */
 }
-
+/* Style for visited links */
 a:visited{
   color: blue;
 }
+/* Card styling with rounded top corners and flex properties */
 
 .card{
   border-radius: 50px 50px 0px 0px;
   display: flex;
-  flex-direction: column; /* Allows for vertical stacking of elements inside .card */
+  flex-direction: column; /* Stacks elements inside each card vertically */
   flex-basis: 450px; /* Sets the initial size of the card to 450px */
-  max-width: 100%; /* Ensures it doesn't exceed the container width on smaller screens */
+  max-width: 100%; /* Prevents card from exceeding container width */
 }
+/* Style for headers that are direct children of the card class */
 .card > header{
   background-color: #288088;
   border: 2px solid #45ADAD;
@@ -137,7 +139,7 @@ a:visited{
 
 div.pricing{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
   align-items: center;
   justify-content: space-around;
 }
@@ -180,6 +182,7 @@ div.pricing{
 }
 
 @media (min-width: 900px){
+  /* Fixes the first header at the top of the screen */
   body > header:first-of-type{
     position: fixed;
     width: 100%;
@@ -188,11 +191,12 @@ div.pricing{
     flex-direction: row;
     justify-content: space-between;
   }
-
+  /* Adjusts navigation links layout */
   .nav_links {
     display: flex;
     flex-direction: row;
   }
+  /* Ensures pricing section items are on the same row */
   div.pricing{
     flex-wrap: nowrap;
     flex-direction: row;
@@ -202,6 +206,7 @@ div.pricing{
   .card{
     flex-basis: 275px; /* Sets the initial width of each card to 275px */
   }
+  /* Adds padding to account for fixed header */
   main{
     padding-top: 120px;
   }
@@ -218,6 +223,7 @@ div.pricing{
   .gallery, #gallery {
     display: none;
   }
+  /* Adjusts navigation bar to full width */
   nav{
     width: 100%;
   }
@@ -226,12 +232,7 @@ div.pricing{
     flex-direction: row;
     justify-content: space-around; /* Adjust spacing based on design needs */
   }
-
-  .nav{
-    flex-direction: row;
-
-  }
-  /* Pricing class alignment */
+  /* Aligns pricing section items at the bottom */
   div.pricing {
     display: flex;
     flex-wrap: nowrap;
@@ -243,7 +244,7 @@ div.pricing{
     flex-basis: 325px; /* Ensures consistent width in print */
   }
 
-  /* Adding thumbs up symbol to list items in cards */
+  /* Adds thumbs-up symbol after specific list items within each card */
   .card ul li:nth-child(even)::after {
     content: "\1F44D "; /* Unicode for thumbs up symbol */
     margin-right: 8px; /* Space between icon and text */
